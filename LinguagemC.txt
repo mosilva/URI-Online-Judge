@@ -1,0 +1,143 @@
+/* URI ONLINE JUDGE */
+
+/* ========== PROBLEMAS ===========*/
+
+
+/* 1001 - Extremamente Básico */
+
+#include <stdio.h>
+ 
+
+int main() 
+{
+  
+int A,B,X;
+ 
+scanf("%d",&A);
+scanf("%d",&B);
+X = A + B;
+
+printf("X = %d\n",X);
+ 
+return 0;
+
+}
+
+/* 1002 - Área do Círculo */
+
+#include <stdio.h>
+
+#define n 3.14159
+
+
+int main() 
+{
+
+double raio, area;
+
+scanf("%lf",&raio);
+area = n*(raio*raio);
+printf("A=%.4f\n",area);
+   
+return 0;
+
+}
+
+/* 1003 - Soma Simples */
+
+#include <stdio.h>
+ 
+
+int main() 
+{
+int A,B,SOMA;
+scanf("%d",&A);
+scanf("%d",&B);
+SOMA = A + B;
+
+printf("SOMA = %d\n",SOMA);
+
+return 0;
+
+}
+
+/* 1004 - Produto Simples */
+
+#include <stdio.h>
+
+
+int main()
+{
+int x,y,PROD;
+
+scanf("%d",&x);
+scanf("%d",&y);
+PROD = x*y;
+
+printf("PROD = %d\n",PROD);
+return 0;
+
+}
+
+
+/* 1005 - Média 1 */
+
+#include <stdio.h>
+ 
+
+int main()
+{
+double A,B,MEDIA;
+scanf("%lf",&A);
+scanf("%lf",&B);
+MEDIA = ((A*3.5) + (B*7.5)) / 11;
+
+printf("MEDIA = %.5lf\n",MEDIA);
+return 0;
+
+}
+
+/* 1006 - Média 2 */
+
+#include <stdio.h>
+
+
+int main()
+{
+double A,B,C,MEDIA;
+
+scanf("%lf",&A);
+
+scanf("%lf",&B);
+
+scanf("%lf",&C);
+MEDIA = ((A*2) + (B*3) + (C*5))/ 10;
+printf("MEDIA = %.1lf\n",MEDIA);
+return 0;
+
+}
+
+/* 1007 - Diferença */
+
+#include <stdio.h>
+
+
+int main() 
+{
+int A,B,C,D,DIFERENCA;
+scanf("%d",&A);
+scanf("%d",&B);
+scanf("%d",&C);
+scanf("%d",&D);
+
+DIFERENCA = (A*B-C*D);
+
+printf("DIFERENCA = %d\n",DIFERENCA);
+return 0;
+
+}
+
+
+
+/* ========== FIM ===========*/
+
