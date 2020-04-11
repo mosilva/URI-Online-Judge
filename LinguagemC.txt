@@ -1,12 +1,12 @@
 /* URI ONLINE JUDGE */
 
+
 /* ========== PROBLEMAS ===========*/
 
 
 /* 1001 - Extremamente Básico */
 
 #include <stdio.h>
- 
 
 int main() 
 {
@@ -23,12 +23,12 @@ return 0;
 
 }
 
+
 /* 1002 - Área do Círculo */
 
 #include <stdio.h>
 
 #define n 3.14159
-
 
 int main() 
 {
@@ -43,10 +43,10 @@ return 0;
 
 }
 
+
 /* 1003 - Soma Simples */
 
 #include <stdio.h>
- 
 
 int main() 
 {
@@ -61,10 +61,10 @@ return 0;
 
 }
 
+
 /* 1004 - Produto Simples */
 
 #include <stdio.h>
-
 
 int main()
 {
@@ -84,7 +84,6 @@ return 0;
 
 #include <stdio.h>
  
-
 int main()
 {
 double A,B,MEDIA;
@@ -96,6 +95,7 @@ printf("MEDIA = %.5lf\n",MEDIA);
 return 0;
 
 }
+
 
 /* 1006 - Média 2 */
 
@@ -116,6 +116,7 @@ printf("MEDIA = %.1lf\n",MEDIA);
 return 0;
 
 }
+
 
 /* 1007 - Diferença */
 
@@ -138,6 +139,97 @@ return 0;
 }
 
 
+/* 1008 - Sálario */
+
+#include <stdio.h>
+
+int main() 
+
+{
+int n,h;
+float v;
+
+scanf("%d", &n);
+scanf("%d", &h);
+scanf("%f", &v);
+printf("NUMBER = %d\nSALARY = U$ %.2f\n",n,h*v);
+    
+return 0;
+}
+
+
+/* 1009 - Salário com Bônus*/
+
+#include <stdio.h>
+
+int main()
+{
+
+char n;
+
+double s,c;
+
+scanf("%s",&n);
+
+scanf("%lf",&s);
+
+scanf("%lf",&c);
+
+c = 0.15*c;
+s = s + c;
+
+printf("TOTAL = R$ %.2lf\n",s);
+
+return 0;
+
+}
+
+
+/* 1010 - Cálculo Simples*/
+
+#include <stdio.h>
+
+int main()
+{
+
+int c1,n1,c2,n2;
+
+float v1,v2;
+
+scanf("%d",&c1);
+
+scanf("%d",&n1);
+
+scanf("%f",&v1);
+
+
+scanf("%d",&c2);
+
+scanf("%d",&n2);
+
+scanf("%f",&v2);
+
+printf("VALOR A PAGAR: R$ %.2f\n",(n1*v1)+(n2*v2));
+
+return 0;
+
+}
+
+
+/* 1011 - Esfera */
+
+#include <stdio.h>
+#include <math.h>
+#define pi 3.14159
+
+int main (void)
+{
+	double r,v;
+	scanf("%lf",&r);
+	
+	printf("VOLUME = %.3lf\n",(4.0/3)*pi*(pow(r,3)));
+	return 0;
+}
 
 /* ========== FIM ===========*/
 
