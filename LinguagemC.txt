@@ -10,37 +10,27 @@
 
 int main() 
 {
-  
 int A,B,X;
- 
 scanf("%d",&A);
 scanf("%d",&B);
 X = A + B;
-
 printf("X = %d\n",X);
- 
 return 0;
-
 }
 
 
 /* 1002 - Área do Círculo */
 
 #include <stdio.h>
-
 #define n 3.14159
 
 int main() 
 {
-
 double raio, area;
-
 scanf("%lf",&raio);
 area = n*(raio*raio);
 printf("A=%.4f\n",area);
-   
 return 0;
-
 }
 
 
@@ -54,11 +44,8 @@ int A,B,SOMA;
 scanf("%d",&A);
 scanf("%d",&B);
 SOMA = A + B;
-
 printf("SOMA = %d\n",SOMA);
-
 return 0;
-
 }
 
 
@@ -69,14 +56,11 @@ return 0;
 int main()
 {
 int x,y,PROD;
-
 scanf("%d",&x);
 scanf("%d",&y);
 PROD = x*y;
-
 printf("PROD = %d\n",PROD);
 return 0;
-
 }
 
 
@@ -90,7 +74,6 @@ double A,B,MEDIA;
 scanf("%lf",&A);
 scanf("%lf",&B);
 MEDIA = ((A*3.5) + (B*7.5)) / 11;
-
 printf("MEDIA = %.5lf\n",MEDIA);
 return 0;
 
@@ -101,27 +84,21 @@ return 0;
 
 #include <stdio.h>
 
-
 int main()
 {
 double A,B,C,MEDIA;
-
 scanf("%lf",&A);
-
 scanf("%lf",&B);
-
 scanf("%lf",&C);
 MEDIA = ((A*2) + (B*3) + (C*5))/ 10;
 printf("MEDIA = %.1lf\n",MEDIA);
 return 0;
-
 }
 
 
 /* 1007 - Diferença */
 
 #include <stdio.h>
-
 
 int main() 
 {
@@ -130,12 +107,9 @@ scanf("%d",&A);
 scanf("%d",&B);
 scanf("%d",&C);
 scanf("%d",&D);
-
 DIFERENCA = (A*B-C*D);
-
 printf("DIFERENCA = %d\n",DIFERENCA);
 return 0;
-
 }
 
 
@@ -144,16 +118,13 @@ return 0;
 #include <stdio.h>
 
 int main() 
-
 {
 int n,h;
 float v;
-
 scanf("%d", &n);
 scanf("%d", &h);
 scanf("%f", &v);
 printf("NUMBER = %d\nSALARY = U$ %.2f\n",n,h*v);
-    
 return 0;
 }
 
@@ -164,24 +135,15 @@ return 0;
 
 int main()
 {
-
 char n;
-
 double s,c;
-
 scanf("%s",&n);
-
 scanf("%lf",&s);
-
 scanf("%lf",&c);
-
 c = 0.15*c;
 s = s + c;
-
 printf("TOTAL = R$ %.2lf\n",s);
-
 return 0;
-
 }
 
 
@@ -191,28 +153,16 @@ return 0;
 
 int main()
 {
-
 int c1,n1,c2,n2;
-
 float v1,v2;
-
 scanf("%d",&c1);
-
 scanf("%d",&n1);
-
 scanf("%f",&v1);
-
-
 scanf("%d",&c2);
-
 scanf("%d",&n2);
-
 scanf("%f",&v2);
-
 printf("VALOR A PAGAR: R$ %.2f\n",(n1*v1)+(n2*v2));
-
 return 0;
-
 }
 
 
@@ -224,12 +174,12 @@ return 0;
 
 int main (void)
 {
-	double r,v;
-	scanf("%lf",&r);
-	
-	printf("VOLUME = %.3lf\n",(4.0/3)*pi*(pow(r,3)));
-	return 0;
+double r,v;
+scanf("%lf",&r);
+printf("VOLUME = %.3lf\n",(4.0/3)*pi*(pow(r,3)));
+return 0;
 }
+
 
 /* ========== FIM ===========*/
 
