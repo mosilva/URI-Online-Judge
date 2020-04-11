@@ -1,0 +1,172 @@
+/* URI ONLINE JUDGE */
+
+
+
+/* ========== PROBLEMAS ===========*/
+
+
+
+
+
+// 2602 - Select Básico
+
+SELECT name
+
+FROM customers
+
+WHERE state = 'RS';
+
+
+// 2603 - Endereço dos Clientes
+
+SELECT name, street
+
+FROM customers
+
+WHERE city = 'Porto Alegre';
+
+
+// 2604 - Menores que 10 ou Maiores que 100
+
+SELECT id,name
+
+FROM products
+
+WHERE price < 10 or price > 100;
+
+
+// 2605 - Representantes Executivos
+
+SELECT a.name,
+       b.name
+
+FROM products a
+
+LEFT JOIN providers b
+
+ON a.id_providers = b.id
+
+WHERE a.id_categories = 6;
+
+
+// 2606 - Categorias
+
+SELECT a.id,
+       a.name
+
+FROM products a
+
+LEFT JOIN categories b
+
+ON a.id_categories = b.id
+
+WHERE b.name like 'super%';
+
+
+// 2607 - Cidades em Ordem Alfabética
+
+SELECT DISTINCT city
+
+FROM providers
+
+ORDER BY city
+;
+
+
+// 2608 - Maior e Menor Preço
+
+SELECT max(price),min(price)
+
+FROM products;
+
+
+
+// 2609 - Produtos por Categorias 
+
+SELECT b.NAME, SUM(a.AMOUNT) AS SUM
+
+FROM Products a
+
+LEFT JOIN categories b
+
+ON a.id_categories = b.id
+
+GROUP BY b.NAME
+
+
+// 2610 - Valor Médio dos Produtos
+
+SELECT ROUND(AVG(price),2) AS price
+FROM products
+
+
+// 2611 - Filmes de Ação
+
+SELECT a.id,a.name
+FROM movies a
+LEFT JOIN genres b
+ON a.id_genres = b.id
+WHERE b.description = 'Action'
+
+
+
+// 2613 - Filmes em Promoção
+
+SELECT a.id, a.name
+FROM movies a
+LEFT JOIN prices b
+ON a.id_prices = b.id
+WHERE b.value < 2
+
+
+// 2614  - Locações de Setembro 
+
+SELECT a.name, b.rentals_date
+FROM customers a
+LEFT JOIN rentals b
+ON a.id = b.id_customers
+WHERE b.rentals_date between to_date('2016-09-01','YYYY-MM-DD') and to_date('2016-09-30','YYYY-MM-DD');
+
+
+// 2615 - Expandindo o Negocio
+
+SELECT DISTINCT city
+FROM customers;
+
+// 2616 - Nenhuma Locação
+
+select a.id, a.name
+FROM customers a
+LEFT JOIN locations b
+ON a.id = b.id_customers
+WHERE b.id_customers is null
+
+// 2617 - Fornecedor Ajax SA
+
+SELECT a.name, b.name
+FROM products a
+LEFT JOIN providers b
+ON a.id_providers = b.id
+WHERE b.name = 'Ajax SA'
+
+// 2618 - Produtos Importados
+
+SELECT a.name, b.name, c.name
+FROM products a
+LEFT JOIN providers b
+ON a.id_providers = b.id
+LEFT JOIN categories c
+ON a.id_categories = c.id
+WHERE b.name = 'Sansul SA' and c.name = 'Imported'
+
+// 2619 - Super Luxo
+
+SELECT a.name, b.name, a.price
+FROM products a
+LEFT JOIN providers b
+ON a.id_providers = b.id
+LEFT JOIN categories c
+ON a.id_categories = c.id
+WHERE a.price > 1000 AND c.name = 'Super Luxury'
+
+/* ========== FIM ===========*/
