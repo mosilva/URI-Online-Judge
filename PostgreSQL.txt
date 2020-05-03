@@ -225,12 +225,12 @@ ORDER BY avg DESC
 
 SELECT  namei,
 CAST(EXTRACT('Day' from payday) AS INT) as day
-FROM loan  
+FROM loan
 
 
-// 2739 - Liga
+// 2740 - Liga
 
-(select 'Podium: ' || lp.team as name 
+(select 'Podium: ' || lp.team as name
 FROM league lp
 limit 3)
 union all
