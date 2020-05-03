@@ -1,37 +1,26 @@
 /* URI ONLINE JUDGE */
 
-
-
 /* ========== PROBLEMAS ===========*/
-
-
-
 
 
 // 2602 - Select Básico
 
 SELECT name
-
 FROM customers
-
 WHERE state = 'RS';
 
 
 // 2603 - Endereço dos Clientes
 
 SELECT name, street
-
 FROM customers
-
 WHERE city = 'Porto Alegre';
 
 
 // 2604 - Menores que 10 ou Maiores que 100
 
 SELECT id,name
-
 FROM products
-
 WHERE price < 10 or price > 100;
 
 
@@ -39,13 +28,9 @@ WHERE price < 10 or price > 100;
 
 SELECT a.name,
        b.name
-
 FROM products a
-
 LEFT JOIN providers b
-
 ON a.id_providers = b.id
-
 WHERE a.id_categories = 6;
 
 
@@ -53,13 +38,9 @@ WHERE a.id_categories = 6;
 
 SELECT a.id,
        a.name
-
 FROM products a
-
 LEFT JOIN categories b
-
 ON a.id_categories = b.id
-
 WHERE b.name like 'super%';
 
 
@@ -68,29 +49,21 @@ WHERE b.name like 'super%';
 SELECT DISTINCT city
 
 FROM providers
-
 ORDER BY city
-;
 
 
 // 2608 - Maior e Menor Preço
 
 SELECT max(price),min(price)
-
 FROM products;
-
 
 
 // 2609 - Produtos por Categorias 
 
 SELECT b.NAME, SUM(a.AMOUNT) AS SUM
-
 FROM Products a
-
 LEFT JOIN categories b
-
 ON a.id_categories = b.id
-
 GROUP BY b.NAME
 
 
@@ -107,7 +80,6 @@ FROM movies a
 LEFT JOIN genres b
 ON a.id_genres = b.id
 WHERE b.description = 'Action'
-
 
 
 // 2613 - Filmes em Promoção
@@ -133,6 +105,7 @@ WHERE b.rentals_date between to_date('2016-09-01','YYYY-MM-DD') and to_date('201
 SELECT DISTINCT city
 FROM customers;
 
+
 // 2616 - Nenhuma Locação
 
 select a.id, a.name
@@ -141,6 +114,7 @@ LEFT JOIN locations b
 ON a.id = b.id_customers
 WHERE b.id_customers is null
 
+
 // 2617 - Fornecedor Ajax SA
 
 SELECT a.name, b.name
@@ -148,6 +122,7 @@ FROM products a
 LEFT JOIN providers b
 ON a.id_providers = b.id
 WHERE b.name = 'Ajax SA'
+
 
 // 2618 - Produtos Importados
 
@@ -159,6 +134,7 @@ LEFT JOIN categories c
 ON a.id_categories = c.id
 WHERE b.name = 'Sansul SA' and c.name = 'Imported'
 
+
 // 2619 - Super Luxo
 
 SELECT a.name, b.name, a.price
@@ -168,5 +144,108 @@ ON a.id_providers = b.id
 LEFT JOIN categories c
 ON a.id_categories = c.id
 WHERE a.price > 1000 AND c.name = 'Super Luxury'
+
+
+// 2620 - Pedidos no Primeiro Semestre
+
+SELECT a.name, b.id
+FROM customers a
+LEFT JOIN orders b
+ON a.id = b.id_customers
+WHERE b.orders_date BETWEEN '2016-01-01' AND '2016-06-30' 
+
+
+// 2621 - Quantidades entre 10 e 20
+
+SELECT b.name
+FROM providers a
+LEFT JOIN products b
+ON a.id = b.id_providers
+WHERE (b.amount BETWEEN 10 AND 20) AND a.name like 'P%' 	
+
+
+// 2622 -Pessoas jurídicas
+
+SELECT a.name
+FROM customers a
+LEFT JOIN legal_person b
+ON b.id_customers = a.id
+WHERE b.id_customers IS NOT NULL;
+
+
+// 2623 - Categorias com Vários Produtos
+
+SELECT a.name, b.name
+FROM products a
+LEFT JOIN categories b
+ON a.id_categories = b.id
+WHERE a.amount > 100 and  b.id IN (1,2,3,6,9)
+ORDER BY b.id
+
+
+// 2624 - Quantidades de Cidades por Clientes
+
+select count(DISTINCT city)
+FROM  customers;
+
+
+// 2625 - Máscara de CPF
+
+SELECT LEFT(cpf,3) || '.' || 
+SUBSTRING(cpf,4,3) || '.' ||
+SUBSTRING(cpf,7,3) || '-' ||
+RIGHT(cpf,2) as CPF
+FROM natural_person
+
+
+// 2626 - Advogados
+
+SELECT name,customers_number
+FROM lawyers
+WHERE customers_number = (SELECT MAX(customers_number) FROM lawyers)	
+UNION ALL
+SELECT name, customers_number FROM lawyers
+WHERE customers_number = (SELECT MIN(customers_number) FROM lawyers)
+UNION ALL
+SELECT 'Average' as name, ROUND(AVG(customers_number)) as customers_number
+FROM lawyers
+
+
+// 2738 - Concurso
+
+SELECT a.name,
+ROUND((((b.math*2)+(b.specific*3)+(b.project_plan*5))/10),2) as avg
+FROM candidate a
+LEFT JOIN score b
+ON a.id = b.candidate_id
+ORDER BY avg DESC
+
+
+// 2739 - Dia de Pagamento
+
+SELECT  namei,
+CAST(EXTRACT('Day' from payday) AS INT) as day
+FROM loan  
+
+
+// 2739 - Liga
+
+(select 'Podium: ' || lp.team as name 
+FROM league lp
+limit 3)
+union all
+(select * from (
+select 'Demoted: ' || team as name
+FROM league
+order by position desc
+limit 2) demoted order by name)
+
+
+// 2741 - Notas de alunos
+
+SELECT 'Approved: '||name, grade
+FROM students
+WHERE grade >= 7
+ORDER BY grade DESC
 
 /* ========== FIM ===========*/
