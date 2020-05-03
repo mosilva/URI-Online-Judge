@@ -27,7 +27,7 @@ WHERE price < 10 or price > 100;
 // 2605 - Representantes Executivos
 
 SELECT a.name,
-       b.name
+b.name
 FROM products a
 LEFT JOIN providers b
 ON a.id_providers = b.id
@@ -37,7 +37,7 @@ WHERE a.id_categories = 6;
 // 2606 - Categorias
 
 SELECT a.id,
-       a.name
+a.name
 FROM products a
 LEFT JOIN categories b
 ON a.id_categories = b.id
@@ -47,7 +47,6 @@ WHERE b.name like 'super%';
 // 2607 - Cidades em Ordem Alfabética
 
 SELECT DISTINCT city
-
 FROM providers
 ORDER BY city
 
@@ -198,7 +197,7 @@ RIGHT(cpf,2) as CPF
 FROM natural_person
 
 
-// 2626 - Advogados
+// 2637 - Advogados
 
 SELECT name,customers_number
 FROM lawyers
