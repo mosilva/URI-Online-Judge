@@ -1,0 +1,384 @@
+# 1001 - Extremamente Básico
+
+A = int(input())
+B = int(input())
+X = A + B
+print("X = {}".format(X))
+
+
+# 1002 - Área do Círculo
+
+n = 3.14159
+r = float(input())
+print("A={:.4f}".format(n*r*r))
+
+
+# 1003 - Soma Simples
+
+A = int(input())
+B = int (input())
+SOMA = A + B
+print("SOMA = {}".format (SOMA))
+
+
+# 1005 - Média 1
+
+A = float(input())
+B = float(input())
+MEDIA = (((A*3.5)+(B*7.5))/11)
+print("MEDIA = {:.5f}".format(MEDIA))
+
+
+# 1004 - Produto Simples
+
+A = int(input())
+B = int(input())
+PROD = A * B
+print("PROD = {}".format(PROD))
+
+
+# 1005 - Média 1
+
+A = float(input())
+B = float(input())
+MEDIA = (((A*3.5)+(B*7.5))/11)
+print("MEDIA = {:.5f}".format(MEDIA))
+
+
+# 1006 - Média 2
+
+A = float(input())
+B = float(input())
+C = float(input())
+MEDIA = (((A*2)+(B*3)+(C*5))/10)
+print('MEDIA = {:.1f}'.format(MEDIA))
+
+
+# 1007 - Diferença
+
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+DIFERENCA = (A*B-C*D)
+print("DIFERENCA = {}".format(DIFERENCA))
+
+
+# 1008 - Salário
+
+NUMBER = int(input())
+TIME = int(input())
+HOUR = float(input())
+SALARY = TIME*HOUR
+print ("NUMBER = {}\n
+SALARY = U$ {:.2f}".format(NUMBER,SALARY))
+
+
+# 1009 - Salário com Bônus
+
+strNAME = input()
+SALFIXO = float(input())
+VENDAS = float(input())
+SALVEND = VENDAS*0.15
+SALTOT = SALFIXO + SALVEND
+print("TOTAL = R$ {:.2f}".format(SALTOT))
+
+
+# 1010 - Cálculo Simples
+
+COD1,NUM1,VAL1 = input().split(" ")
+COD1 = int((COD1))
+NUM1 = int((NUM1))
+VAL1 = float((VAL1))
+TOT1 = NUM1 * VAL1
+COD2,NUM2,VAL2 = input().split(" ")
+COD2 = int((COD2))
+NUM2 = int((NUM2))
+VAL2 = float((VAL2))
+TOT2 = NUM2 * VAL2
+TOTAL = TOT1 + TOT2
+print("VALOR A PAGAR: R$ {:.2f}".format(TOTAL))
+
+
+# 1011 - Esfera
+
+R = float(input())
+VOLUME = ((4*3.14159)*(R**3))/3
+print("VOLUME = %.3f" % VOLUME)
+
+
+# 1012 - Área
+
+PI = 3.14159
+A,B,C = input().split(" ")
+A = float(A)
+B = float(B)
+C = float(C)
+TR = (A*C)/2
+CI = (PI*(C**2))
+TZ = (A+B)*C/2
+QD = B**2
+RT = A*B
+print("TRIANGULO: {:.3f}\nCIRCULO: {:.3f}\nTRAPEZIO: {:.3f}\nQUADRADO: {:.3f}\nRETANGULO: {:.3f}".format(TR,CI,TZ,QD,RT))
+
+
+# 1013 - O Maior
+
+A,B,C = input().split(" ")
+A = int(A)
+B = int(B)
+C = int(C)
+D = ((A+B+abs(A-B))/2)
+E = ((C+D+abs(C-D))/2)
+print("{:.0f} eh o maior".format(E))
+
+
+# 1014 - Consumo
+
+X = int(input())
+Y = float(input())
+G = X/Y
+print("%.3f km/l" % G)
+
+
+# 1015 - Distância Entre Dois Pontos
+
+p1 = input().split()
+p2 = input().split()
+x1 = float(p1[0])
+y1 = float(p1[1])
+x2 = float(p2[0])
+y2 = float(p2[1])
+D = ((x2-x1)**2+(y2-y1)**2)**0.5
+print("{:.4f}".format(D))
+
+
+# 1016 - Distância
+
+x = 60
+y = 90
+min = 1
+xd = 60/ 60
+yd = 90 / 60
+xt = 0 
+yt = 0
+dyx = 0
+dd= int(input())
+while dyx != dd:
+    xt = xd * min
+    yt = yd * min
+    min += 1
+    dyx = yt - xt
+min = min - 1
+print("{} minutos".format(min))
+
+
+# 1017 - Gasto de Combustível
+
+x = 12
+h = int(input())
+v = int(input())
+l = (h*v)/x
+print("{:.3f}".format(l))
+
+
+# 1018 - Cédulas
+
+x1 = 0
+x =int(input())
+x1 = x
+ncm = x1 // 100.00
+x1 = round(x1 - (ncm*100),2) 
+ncq = x1 // 50.00
+x1 = round(x1 - (ncq*50),2) 
+nvt = x1 // 20.00
+x1 = round(x1 - (nvt*20),2) 
+ndz = x1 // 10.00
+x1 = round(x1 - (ndz*10),2)
+ncn = x1 // 5.00
+x1 = round(x1 - (ncn*5),2) 
+nds = x1 // 2.00
+x1 = round(x1 -(nds*2),2)
+num = x1 // 1.00
+x1 = round((x1 - num),2)
+print("{}\n{:.0f} nota(s) de R$ 100,00\n{:.0f} nota(s) de R$ 50,00\n{:.0f} nota(s) de R$ 20,00\n{:.0f} nota(s) de R$ 10,00\n{:.0f} nota(s) de R$ 5,00\n{:.0f} nota(s) de R$ 2,00\n{:.0f} nota(s) de R$ 1,00".format(x,ncm,ncq,nvt,ndz,ncn,nds,num))
+
+
+# 1019 - Conversão de Tempo
+
+t = int(input())
+h = t//3600
+m = (t%3600)//60
+s = ((t%3600)%60)
+print("{}:{}:{}".format(h,m,s))
+
+
+# 1049 - Ánimal
+
+t1 = input()
+t2 = input()
+t3 = input()
+if t1 == 'vertebrado':
+    if t2 == 'ave':
+        if t3 == 'carnivoro':
+            print('aguia')
+        elif t3 == 'onivoro':
+            print('pomba')
+    elif t2 =='mamifero':
+        if t3 == 'onivoro':
+            print('homem')
+        elif t3 == 'herbivoro':
+            print('vaca')
+elif t1 == 'invertebrado':
+    if t2 == 'inseto':
+        if t3 == 'hematofago':
+            print('pulga')
+        elif t3 == 'herbivoro':
+            print('lagarta')
+    elif t2 == 'anelideo':
+        if t3 == 'hematofago':
+            print('sanguessuga')
+        elif t3 == 'onivoro':
+            print('minhoca')
+
+
+hi,mi,hf,mf = input().split()
+
+hi = int(hi)
+mi = int(mi)
+hf = int(hf)
+mf = int(mf)
+
+
+#1047 Tempo de Jogo com Minutos
+
+if hi < hf:
+    h = hf - hi
+    if mi < mf:
+        m = mf - mi
+    elif mi > mf:
+        h = h - 1
+        m = (60 - mi) + mf
+    else:
+        m = 0
+elif hi > hf:
+    h = (24 - hi) + hf
+    if mi < mf:
+        m = mf - mi
+    elif mi > mf:
+        h = h - 1
+        m = (60 - mi) + mf
+    else:
+        m = 0
+else:
+    if mi < mf:
+        m = mf - mi
+        h = 0
+    elif mi > mf:
+        m = (60 - mi) + mf
+        h = 23
+    else:
+        h = 24
+        m = 0
+    
+print('O JOGO DUROU {} HORA(S) E {} MINUTO(S)'.format(h, m))
+
+
+# 1050 DDD
+
+D = int(input())
+if D == 61:
+    print("Brasilia")
+elif D ==71:
+    print("Salvador")
+elif D ==11:
+    print("Sao Paulo")
+elif D==21:
+    print("Rio de Janeiro")
+elif D==32:
+    print("Juiz de Fora")
+elif D==19:
+    print("Campinas")
+elif D==27:
+    print("Vitoria")
+elif D==31:
+    print("Belo Horizonte")
+else:
+    print("DDD nao cadastrado")
+
+
+# 1071 Soma de Impares Consecutivos I
+
+X = int(input())
+Y = int(input())
+T = 0
+if X<Y:
+    while X<Y-1:
+        X += 1
+        if X%2!=0:
+            T += X
+elif Y<X:
+    while Y<X-1:
+        Y += 1
+        if Y%2!=0:
+            T += Y            
+print("{}".format(T))   
+
+
+# 1328 Combinador
+
+N = int(input())
+i = 0
+i2 = 0
+p = ""
+while N != i:
+    s1,s2 = input().split() 
+    if len(s1) > len(s2):
+        dif = len(s1) - len(s2)
+        dif = dif * " "
+        s2 = s2 + dif
+    elif len(s2) >  len(s1):
+        dif = len(s2) - len(s1)
+        dif = dif * " "
+        s1 = s1 + dif
+    while len(s1) > i2 or len(s2) > i2:
+        if s1[i2] == " ":
+            p = p + s2[i2]
+        elif s2[i2] == " ":
+            p = p + s1[i2]
+        else:    
+            p = p + s1[i2] + s2[i2]
+        i2 += 1
+    print(p)
+    p = ""
+    i2 = 0
+    i += 1
+
+
+# 1052 Mês
+
+N = int(input())
+if N == 1:
+    print('January')
+elif N == 2:
+    print('February')
+elif N == 3:
+    print('March')
+elif N == 4:
+    print('April')
+elif N == 5:
+    print('May')
+elif N == 6:
+    print('June')
+elif N == 7:
+    print('July')
+elif N == 8:
+    print('August')
+elif N == 9:
+    print('September')
+elif N == 10:
+    print('October')
+elif N == 11:
+    print('November')
+elif N == 12:
+    print('December')
